@@ -1,0 +1,33 @@
+# 기본 사이트 정보
+title: "나만의 블로그"
+subtitle: "A Jekyll theme"
+name: "내 이름"
+description: "블로그 설명을 적어주세요."
+url: "https://본인아이디.github.io" # 본인의 GitHub Pages 주소를 적어주세요.
+baseurl: ""
+
+# GitHub Pages 원격 테마 설정
+remote_theme: "mmistakes/minimal-mistakes@4.28.1"
+minimal_mistakes_skin: "default" # 테마 색상 (default, air, aqua, dark 등)
+
+# 플러그인 설정
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-remote-theme
+  
+# 페이지네이션(글 목록 나누기) 설정
+paginate: 10
+paginate_path: /posts/page:num/
+
+# 네비게이션 및 페이지 기본 레이아웃 설정
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "single"
+      author_profile: true
