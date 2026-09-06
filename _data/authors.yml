@@ -1,0 +1,37 @@
+# /_data/authors.yml
+
+haanss:
+  name        : "haanss"
+  bio         : "마음은 계절을 따라 흘러갑니다."
+  avatar      : "/assets/images/bio-photo.jpg"
+  fediverse   : "@billyrick@instance.social"
+  links:
+    - label: "Instagram"      
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/la-bohe.me"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-square-x-twitter"
+      url: "https://twitter.com/la-boheme-host"
+    - label: "Web"
+      icon: "fas fa-fw fa-link"
+      url: "https://la-boheme.me"
+    - label: "Email"
+      icon: "fas fa-fw fa-square-envelope"
+      url: "mailto:la.boheme.host@gmail.com"
+    
+    
+    
+
+
+Rom:
+  name        : "Rom"
+  bio         : "I ordered what?"
+  avatar      : "/assets/images/bio-photo.jpg"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-square-envelope"
+      url: "mailto:romiyoo@naver.com"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-square-x-twitter"
+      url: "https://twitter.com/romiyoo"
+    

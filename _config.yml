@@ -1,14 +1,19 @@
 # 기본 사이트 정보
-title: "나만의 블로그"
-subtitle: "A Jekyll theme"
-name: "내 이름"
+title: "La bohème"
+subtitle: "by @haanss"
+name: "영화와 음악은 계절을 따라 흘러갑니다."
 description: "블로그 설명을 적어주세요."
+
+# URL 및 퍼머링크 설정
 url: "https://la-boheme-host.github.io"
 baseurl: "/mini"
 
+# 포스트 주소 형식을 지정합니다. (예: /2026/08/06/1 형태 또는 원하는 구조)
+permalink: /:title/
+search: true
 # GitHub Pages 원격 테마 설정
 remote_theme: "mmistakes/minimal-mistakes@4.28.1"
-minimal_mistakes_skin: "default" # 테마 색상 (default, air, aqua, dark 등)
+minimal_mistakes_skin: "contrast" # 테마 색상 (default,contrast, air, aqua, dark, dirt 등)
 
 # 플러그인 설정
 plugins:
@@ -18,16 +23,72 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-remote-theme
+  - jekyll-archives
 
 # 페이지네이션(글 목록 나누기) 설정
 paginate: 10
-paginate_path: /posts/page:num/
+paginate_path: /page:num/
 
 # 네비게이션 및 페이지 기본 레이아웃 설정
 defaults:
+# pages
   - scope:
       path: ""
       type: "pages"
     values:
       layout: "single"
       author_profile: true
+      show_date: true
+      date_format: "%Y-%m-%d"
+# _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      show_date: true
+      date_format: "%Y-%m-%d"
+      comments: true
+      share: true
+      related: true
+      comments: false
+# _foo
+  - scope:
+      path: ""
+      type: foo
+    values:
+      layout: single
+
+
+footer:
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-square-x-twitter"
+      url: "https://twitter.com/la-boheme-host"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/la-boheme-host"
+      rel: "me"
+    - label: "Instagram"
+      icon: "fab fa-fw fa-instagram"
+      url: "https://instagram.com/la-boheme-host"
+
+
+category_archive:
+  type: jekyll-archives
+  path: /categories/
+tag_archive:
+  type: jekyll-archives
+  path: /tags/
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/

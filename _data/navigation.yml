@@ -1,5 +1,25 @@
 main:
-  - title: "About"
-    url: /about/
+  - title: "|"
+  - title: "봄"
+    url: https://bom.la-bohe.me
+    target: _blank
+  - title: "|"
+  - title: "음"
+    url: https://umm.la-bohe.me
+    target: _blank
+  - title: "|"
   - title: "Posts"
     url: /posts/
+  - title: "Categories"
+    url: /categories/
+    children:
+      - title: "Film"
+        url: /categories/film/
+      - title: "OTT"
+        url: /categories/OTT/
+      - title: "Preview"
+        url: /categories/preview/
+  - title: "Tags"
+    url: /tags/
+  - title: "About"
+    url: /about/
