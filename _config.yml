@@ -5,8 +5,11 @@ name: "영화와 음악은 계절을 따라 흘러갑니다."
 description: "블로그 설명을 적어주세요."
 
 # URL 및 퍼머링크 설정
-url: "https://la-boheme-host.github.io"
-baseurl: "/mini"
+# url: "https://la-boheme-host.github.io"
+# baseurl: "/mini"
+
+url: "https://test.la-bohe.me" # 본인의 커스텀 도메인 주소
+baseurl: "" # 기존 "/mini"에서 빈 값으로 변경
 
 # 포스트 주소 형식을 지정합니다. (예: /2026/08/06/1 형태 또는 원하는 구조)
 permalink: /:title/
