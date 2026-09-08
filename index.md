@@ -2,11 +2,15 @@
 layout: splash
 title: "La bohème Blog"
 excerpt: "haanss Blog."
-classes: wide
+toc: true
+toc_laboel: "test"
 ---
+
 {% assign latest_post = site.posts.first %}
+{% assign latest_img = latest_post.teaser | default: latest_post.header.overlay_image | default: latest_post.header.image %}
+
 <!-- 1. 좌우 여백 없이 화면에 꽉 차는 동적 히어로(헤더) 영역 -->
-<div class="page__hero--overlay" style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)), url('{{ latest_post.header.overlay_image | relative_url }}'); background-size: cover; background-position: center; padding: 5rem 2rem; text-align: left; color: #fff; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; margin-bottom: 2rem;">
+<div class="page__hero--overlay" style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2)), url('{{ latest_img | relative_url }}'); background-size: cover; background-position: center; padding: 5rem 2rem; text-align: left; color: #fff; width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw; margin-bottom: 2rem;">
   <div style="max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
     <h1 style="color: #fff; font-size: 2.5rem; margin-bottom: 1rem;">{{ latest_post.title }}</h1>
     <p style="font-size: 1.2rem; max-width: 600px; margin: 0 0 1.5rem 0;">{{ latest_post.excerpt | strip_html | truncate: 100 }}</p>
@@ -14,17 +18,42 @@ classes: wide
   </div>
 </div>
 
-<!-- 2. 최신 포스팅들의 이미지를 활용한 동적 피처 그리드 영역 -->
-<div class="feature__wrapper" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: space-between;">
-  {% for post in site.posts limit:6 %}
+<!-- 2. 피처 그리드 영역: 상단 2개 배치 -->
+<div class="feature__wrapper" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: space-between; margin-bottom: 20px;">
+  {% for post in site.posts limit:2 %}
+    {% assign post_img = post.teaser | default: post.header.overlay_image | default: post.header.image %}
     <div style="flex: 1; min-width: 280px; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
-      {% if post.header.overlay_image %}
+      {% if post_img %}
         <div style="height: 180px; overflow: hidden;">
-          <img src="{{ post.header.overlay_image | relative_url }}" alt="{{ post.title }}" style="width: 100%; height: 100%; object-fit: cover;" />
+          <img src="{{ post_img | relative_url }}" alt="{{ post.title }}" style="width: 100%; height: 100%; object-fit: cover;" />
         </div>
       {% endif %}
       <div style="padding: 1.5rem;">
         <h3 style="margin-top: 0; font-size: 1.25rem;"><a href="{{ post.url | relative_url }}" style="text-decoration: none; color: inherit;">{{ post.title }}</a></h3>
+        <p style="color: #666; font-size: 0.85rem; margin-bottom: 0.75rem;">{{ post.date | date: "%Y. %m. %d" }}</p>
+        <p style="color: #666; font-size: 0.95rem;">{{ post.excerpt | strip_html | truncate: 80 }}</p>
+        <a href="{{ post.url | relative_url }}" class="btn btn--inverse btn--small">자세히 보기</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<!-- 3. 피처 그리드 영역: 하단 4개 배치 -->
+<div class="feature__wrapper" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: space-between;">
+  {% for post in site.posts offset:2 limit:4 %}
+    {% assign post_img = post.teaser | default: post.header.overlay_image | default: post.header.image %}
+    <style>
+      .feature__wrapper > div { flex-basis: calc(25% - 15px); }
+    </style>
+    <div style="flex: 1; min-width: 220px; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+      {% if post_img %}
+        <div style="height: 180px; overflow: hidden;">
+          <img src="{{ post_img | relative_url }}" alt="{{ post.title }}" style="width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+      {% endif %}
+      <div style="padding: 1.5rem;">
+        <h3 style="margin-top: 0; font-size: 1.25rem;"><a href="{{ post.url | relative_url }}" style="text-decoration: none; color: inherit;">{{ post.title }}</a></h3>
+        <p style="color: #666; font-size: 0.85rem; margin-bottom: 0.75rem;">{{ post.date | date: "%Y. %m. %d" }}</p>
         <p style="color: #666; font-size: 0.95rem;">{{ post.excerpt | strip_html | truncate: 80 }}</p>
         <a href="{{ post.url | relative_url }}" class="btn btn--inverse btn--small">자세히 보기</a>
       </div>
