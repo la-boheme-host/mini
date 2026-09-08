@@ -108,7 +108,7 @@ def advanced_migrate():
                     # 본문 내부 이미지 경로 치환 (본문은 /mini/ 포함)
                     post_content = re.sub(
                         r'src=["\'](\./)?img/', 
-                        f'src="/mini/assets/images/{post_id}/', 
+                        f'src="/assets/images/{post_id}/', 
                         post_content
                     )
 
