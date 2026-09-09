@@ -2,8 +2,7 @@
 layout: splash
 title: "La bohème Blog"
 excerpt: "haanss Blog."
-toc: true
-toc_laboel: "test"
+
 ---
 
 {% assign latest_post = site.posts.first %}
