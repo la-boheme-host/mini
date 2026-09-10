@@ -13,12 +13,12 @@ main:
   - title: "Categories"
     url: /categories/
     children:
-      - title: "Film"
+      - title: "Book"
+        url: /categories/book/
+      - title: "FILM"
         url: /categories/film/
-      - title: "OTT"
-        url: /categories/OTT/
-      - title: "Preview"
-        url: /categories/preview/
+      - title: "IT"
+        url: /categories/IT/
   - title: "Tags"
     url: /tags/
   - title: "About"

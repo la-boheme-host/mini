@@ -24,7 +24,8 @@ author:
 
 ---
 
-
+사진을 좋아하고 *Nikon D700* 을 사용하고 있습니다.  
+디지털 유목민으로 여기 저기 블로그로 방랑하다가 제미나이의 도움을 받아 github Jekyll 블로그에 정착했습니다. 
 
 This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
 

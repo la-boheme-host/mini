@@ -17,10 +17,12 @@ gem "jekyll-gist"
 gem "jekyll-feed"
 
 group :jekyll_plugins do
+  gem "minimal-mistakes-jekyll"
   # gem "jekyll-feed", "~> 0.12"
   gem "jekyll-paginate"
   gem "jekyll-sitemap"
   gem "jekyll-gist"
+  gem "jekyll-feed"
   gem "jekyll-include-cache"
   gem "jekyll-remote-theme"
   gem "jekyll-archives"  # 이 부분이 반드시 있어야 합니다!
